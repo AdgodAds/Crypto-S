@@ -211,7 +211,7 @@
                 <div class="market-item">💎 दिसावर <span>LIVE</span></div>
             </div>
 
-            <!-- Telegram Join Button with ID for Pixel Tracking -->
+            <!-- Telegram Join Button with Subscribe Event Tracking -->
             <a href="https://t.me/+W5JrF3Gi261jYmY1" class="telegram-btn" id="joinBtn">
                 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.06-.78 4.16-1.81 6.94-3 8.35-3.57 3.98-1.64 4.81-1.92 5.35-1.93.12 0 .39.03.56.17.14.12.18.28.2.4-.01.07.01.29-.03.49z" fill="currentColor"/>
@@ -231,18 +231,18 @@
         &copy; 2026 ✌गाज़ियाबाद फरीदाबाद फिक्स जोड़ी✌. All rights reserved.
     </div>
 
-    <!-- 🎯 Pixel Event Trigger Script -->
+    <!-- 🎯 Pixel Subscribe Event Trigger Script -->
     <script>
         document.getElementById('joinBtn').addEventListener('click', function(e) {
-            e.preventDefault(); // तुरंत पेज बदलने से रोकता है ताकि पिक्सल्स ठीक से फायर हो सकें
+            e.preventDefault(); // पेज तुरंत रीडायरेक्ट होने से रोकता है ताकि पिक्सेल लोड हो सके
             var telegramUrl = this.href;
 
-            // Facebook Pixel Lead Track
+            // Facebook Pixel Subscribe Track Event
             if (typeof fbq === 'function') {
-                fbq('track', 'Lead');
+                fbq('track', 'Subscribe');
             }
 
-            // छोटा सा डिले देकर यूजर को टेलीग्राम पर रीडायरेक्ट करेगा
+            // 300 मिलीसेकंड के डिले के बाद टेलीग्राम पर रीडायरेक्ट कर देगा
             setTimeout(function() {
                 window.location.href = telegramUrl;
             }, 300);
